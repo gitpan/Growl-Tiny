@@ -17,6 +17,9 @@ t/32.growl.semicolon.t
 t/33.growl.utf8.t
 t/34.growl.backtick.t
 t/35.growl.spaces.t
+t/40.growl.name.t
+t/50.growl.image.t
+t/60.growl.host.t
 t/critic.t
 t/kwalitee.t
 t/meta.t
