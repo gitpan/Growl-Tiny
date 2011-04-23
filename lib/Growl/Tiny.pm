@@ -2,11 +2,10 @@ package Growl::Tiny;
 use strict;
 use warnings;
 
+our $VERSION = '0.0.3'; # VERSION
+
 use base 'Exporter';
 our @EXPORT_OK = ( 'notify' );
-
-our $VERSION = '0.0.2';
-
 
 my $GROWL_COMMAND = "/usr/local/bin/growlnotify";
 
@@ -23,7 +22,7 @@ Growl::Tiny - tiny perl module for sending Growl notifications on Mac OS X
 
 =head1 VERSION
 
-version 0.0.2
+version 0.0.3
 
 =head1 SYNOPSIS
 
@@ -166,6 +165,10 @@ sub notify {
 
     if ( $options->{title} ) {
         push @command_line_args, ( '-t', $options->{title} );
+    }
+
+    if ( $options->{identifier} ) {
+        push @command_line_args, ( '-d', $options->{identifier} );
     }
 
     #print "COMMAND: ", join " ", @command_line_args, "\n";

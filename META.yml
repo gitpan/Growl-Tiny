@@ -2,7 +2,14 @@
 abstract: 'tiny perl module for sending Growl notifications on Mac OS X'
 author:
   - 'Alex White <VVu@geekfarm.org>'
-generated_by: 'Dist::Zilla version 1.092680'
+build_requires:
+  English: 0
+  Test::More: 0.88
+  utf8: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.31
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -10,8 +17,7 @@ meta-spec:
 name: Growl-Tiny
 requires:
   Carp: 0
-  ExtUtils::MakeMaker: 0
-  Test::More: 0
-  base: 0
-  utf8: 0
-version: 0.0.2
+  Exporter: 0
+resources:
+  repository: http://github.com/wu/Growl-Tiny
+version: 0.0.3
