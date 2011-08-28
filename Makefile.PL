@@ -4,32 +4,34 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'tiny perl module for sending Growl notifications on Mac OS X',
-  'AUTHOR' => 'Alex White <VVu@geekfarm.org>',
-  'BUILD_REQUIRES' => {
-    'English' => '0',
-    'Test::More' => '0.88',
-    'utf8' => '0'
+  "ABSTRACT" => "tiny perl module for sending Growl notifications on Mac OS X",
+  "AUTHOR" => "Alex White <VVu\@geekfarm.org>",
+  "BUILD_REQUIRES" => {
+    "English" => 0,
+    "Test::More" => 0,
+    "utf8" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Growl-Tiny',
-  'EXE_FILES' => [],
-  'LICENSE' => 'bsd',
-  'NAME' => 'Growl::Tiny',
-  'PREREQ_PM' => {
-    'Carp' => '0',
-    'Exporter' => '0'
+  "DISTNAME" => "Growl-Tiny",
+  "EXE_FILES" => [],
+  "LICENSE" => "bsd",
+  "NAME" => "Growl::Tiny",
+  "PREREQ_PM" => {
+    "Exporter" => 0,
+    "base" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.0.3',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.0.4",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

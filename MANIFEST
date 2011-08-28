@@ -8,7 +8,6 @@ devel-cover.txt
 dist.ini
 lib/Growl/Tiny.pm
 perl-metrics-simple.txt
-t/000-report-versions-tiny.t
 t/10.growl.t
 t/20.growl_broken.t
 t/30.growl.singlequote.t
@@ -22,7 +21,7 @@ t/50.growl.image.t
 t/60.growl.host.t
 t/70.growl.identifier.t
 t/author-critic.t
-t/critic.t
+t/author-pod-spell.t
 t/kwalitee.t
 t/meta.t
 t/no_tabs.t
