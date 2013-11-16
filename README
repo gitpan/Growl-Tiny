@@ -1,11 +1,11 @@
 
 
 This archive contains the distribution Growl-Tiny,
-version 0.0.4:
+version 0.0.5:
 
   tiny perl module for sending Growl notifications on Mac OS X
 
-This software is Copyright (c) 2011 by Alex White.
+This software is Copyright (c) 2013 by Alex White.
 
 This is free software, licensed under:
 

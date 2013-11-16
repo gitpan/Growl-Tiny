@@ -6,6 +6,10 @@ Makefile.PL
 README
 devel-cover.txt
 dist.ini
+inc/Devel/AssertOS.pm
+inc/Devel/AssertOS/Apple.pm
+inc/Devel/AssertOS/MacOSX.pm
+inc/Devel/CheckOS.pm
 lib/Growl/Tiny.pm
 perl-metrics-simple.txt
 t/10.growl.t

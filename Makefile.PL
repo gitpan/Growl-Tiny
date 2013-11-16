@@ -1,3 +1,5 @@
+use lib 'inc';
+use Devel::AssertOS qw[Apple];
 
 use strict;
 use warnings;
@@ -11,11 +13,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "tiny perl module for sending Growl notifications on Mac OS X",
   "AUTHOR" => "Alex White <VVu\@geekfarm.org>",
-  "BUILD_REQUIRES" => {
-    "English" => 0,
-    "Test::More" => 0,
-    "utf8" => 0
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -29,24 +27,31 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0.4",
+  "TEST_REQUIRES" => {
+    "Test::More" => 0,
+    "utf8" => 0
+  },
+  "VERSION" => "0.0.5",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
-  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
-  for my $mod ( keys %$br ) {
-    if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
-    }
-    else {
-      $pp->{$mod} = $br->{$mod};
-    }
-  }
+my %FallbackPrereqs = (
+  "Exporter" => 0,
+  "Test::More" => 0,
+  "base" => 0,
+  "strict" => 0,
+  "utf8" => 0,
+  "warnings" => 0
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
 }
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
